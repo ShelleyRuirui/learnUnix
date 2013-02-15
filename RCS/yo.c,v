@@ -1,0 +1,122 @@
+head	1.5;
+access;
+symbols;
+locks
+	cse:1.5; strict;
+comment	@ * @;
+
+
+1.5
+date	2013.02.05.22.02.56;	author cse;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2013.02.04.06.58.07;	author cse;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2013.02.04.06.55.46;	author cse;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2013.02.04.06.33.37;	author cse;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2013.02.04.06.24.35;	author cse;	state Exp;
+branches;
+next	;
+
+
+desc
+@Source code file to demo basic RCS usage.
+@
+
+
+1.5
+log
+@add some more variables.
+@
+text
+@/* $Id: yo.c,v 1.4 2013/02/04 06:58:07 cse Exp cse $
+ *
+ *$Log: yo.c,v $
+ *Revision 1.4  2013/02/04 06:58:07  cse
+ *add xxx
+ *
+ *Revision 1.3  2013/02/04 06:55:46  cse
+ *add variable
+ *
+ *
+ *$Revision$
+ *
+ *
+ *$Author$
+ *
+ *
+ * yo.c - Code to demo RCS Usage
+ */
+
+#include <stdio.h>
+
+int main(void)
+{
+  printf("Yo xxx  yo check it now, Linux programming\n");
+  return 0;
+}
+@
+
+
+1.4
+log
+@add xxx
+@
+text
+@d1 1
+a1 1
+/* $Id: yo.c,v 1.3 2013/02/04 06:55:46 cse Exp cse $
+d4 3
+d9 7
+@
+
+
+1.3
+log
+@add variable
+@
+text
+@d1 5
+a5 1
+/* $Id$
+a6 1
+ *$Log$
+d14 1
+a14 1
+  printf("Yo yo check it now, Linux programming\n");
+@
+
+
+1.2
+log
+@Modified print msg.
+@
+text
+@d1 3
+a3 1
+/* 
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d9 1
+a9 1
+  printf("Yo, Linux programming\n");
+@

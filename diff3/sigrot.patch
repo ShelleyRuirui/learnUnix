@@ -1,0 +1,45 @@
+*** sigrot.1	2013-02-03 21:49:01.000000000 -0800
+--- sigrot.2	2013-02-03 21:52:20.000000000 -0800
+***************
+*** 1,19 ****
+  #! /bin/bash
+  # sigrot.sh
+! # Version 1.0
+  # Rotate signatures
+  # Suitable to be run via cron
+  #############################
+  
+  sigfile=signature
+  
+! old=$(cat num)
+  let new=$(expr $old+1)
+  
+! if [ -f $sigfile.$new ] ; then
+!   cp $sigfile.$new .$sigfile
+!   echo $new > num
+  else
+!   cp $sigfile.1 .$sigfile
+!   echo 1 > num
+  fi
+--- 1,21 ----
+  #! /bin/bash
+  # sigrot.sh
+! # Version 2.0
+  # Rotate signatures
+  # Suitable to be run via cron
+  #############################
+  
+  sigfile=signature
++ srcdir=$HOME/doc/signatures
++ srcfile=$srcdir/$sigfile
+  
+! old=$(cat $srcdir/num)
+  let new=$(expr $old+1)
+  
+! if [ -f $srcfile.$new ] ; then
+!   cp $srcfile.$new $HOME/.$sigfile
+!   echo $new > $srcdir/num
+  else
+!   cp $srcfile.1 $HOME/.$sigfile
+!   echo 1 > $srcdir/num
+  fi

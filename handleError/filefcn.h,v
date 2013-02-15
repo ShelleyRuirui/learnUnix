@@ -1,0 +1,34 @@
+head	1.1;
+access;
+symbols;
+locks
+	cse:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	2013.02.05.23.41.11;	author cse;	state Exp;
+branches;
+next	;
+
+
+desc
+@The first edition, seems not pass gcc
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@/*
+ * filefcn.h - A function to open files
+ */
+#ifndef FILEFCN_H_
+#define FILEFCN_H_
+
+int open_file(FILE **fp,char *fname,char *mode,int line,char *file);
+
+#endif /*FILEFCN_H_*/
+@

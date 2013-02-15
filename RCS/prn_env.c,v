@@ -1,0 +1,64 @@
+head	2.1;
+access;
+symbols;
+locks
+	cse:2.1; strict;
+comment	@ * @;
+
+
+2.1
+date	2013.02.05.22.25.49;	author cse;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2013.02.05.22.17.35;	author cse;	state Exp;
+branches;
+next	;
+
+
+desc
+@C file with RCS keyword.
+@
+
+
+2.1
+log
+@Move $Id$ upward.
+@
+text
+@/*$Id$
+ *prn_env.c - Display values of environment variables
+ */
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+
+int main(void)
+{
+  extern char **environ;
+  char **my_env=environ;
+
+  while(*my_env){
+    printf("%s\n",*my_env);
+    my_env++;
+  }
+
+  exit(EXIT_SUCCESS);
+}
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 1
+a1 1
+/*
+a7 2
+
+static char rcsid[] = "$Id$\n";
+@
