@@ -1,13 +1,17 @@
 /*
- * child.c - Simple fork usage
+ * waiter.c - Simple wait usage
  */
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include<unistd.h>
+#include<sys/types.h>
+#include<sys/wait.h>
+#include<stdio.h>
+#include<stdlib.h>
 
 int main(void)
 {
   pid_t child;
+  int status;
+
   if((child=fork())==-1){
     perror("fork");
     exit(EXIT_FAILURE);
@@ -17,10 +21,11 @@ int main(void)
     printf("\tchild ppid=%d\n",getppid());
     exit(EXIT_SUCCESS);
   }else{
+    waitpid(child,&status,WNOHANG);
     puts("in parent");
-    sleep(5);
     printf("\tparent pid=%d\n",getpid());
-    printf("\tparent pid=%d\n",getppid());
+    printf("\tparent ppid=%d\n",getppid());
+    printf("\tchild exited with %d\n",status);
   }
   exit(EXIT_SUCCESS);
 }
