@@ -1,0 +1,3 @@
+cut:
+  cut -f 1 -d ':' /etc/passwd | head -15
+  grep '[[:digit:]]:' /proc/interrupts | cut -c 1-18

@@ -1,0 +1,3 @@
+all:pripds
+
+pripds:pripds.o
