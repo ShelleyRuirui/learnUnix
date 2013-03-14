@@ -54,7 +54,10 @@ int main(int argc,char* argv[])
     printf("Current msg is %s\n",msg);
     currentX++;
     currentY++;
+    write(sockfd,msg,128);
+    sleep(2);
   }
 
+  close(sockfd);
   exit(0);
 }

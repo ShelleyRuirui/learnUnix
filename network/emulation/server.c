@@ -31,9 +31,12 @@ int main(int argc,char *argv[])
     printf("server waiting\n");
     client_len=sizeof(client_address);
     client_sockfd=accept(server_sockfd,(struct sockaddr*)&client_address,&client_len);
+    
     if(fork()==0){
-      read(client_sockfd,ch,128);
-      fprintf("The thing received is %s\n",ch);
+      printf("Current client:%d\n",client_sockfd);
+      while(read(client_sockfd,ch,128)>0){
+	printf("The thing received is %s\n",ch);
+      }
       close(client_sockfd);
       exit(0);
     }else{
